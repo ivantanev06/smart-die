@@ -24,8 +24,7 @@ The project will use these measurements to study the state of a die roll and app
 
 ## Hardware
 
-- Seeed Studio XIAO nRF52840 Sense
-- Onboard 6-axis IMU
+- Seeed Studio XIAO nRF52840 Sense, with onboard 6-axis IMU
 - 3.7 V LiPo battery
 - Power switch
 - Custom 3D-printed enclosure
