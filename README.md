@@ -2,10 +2,7 @@
 
 
 
-A physical smart die containing a Seeed Studio XIAO nRF52840 Sense
-
-and its onboard LSM6DS3TR-C 6-axis IMU was constructed to investigate
-
+A physical smart die containing a Seeed Studio XIAO nRF52840 Sense and its onboard LSM6DS3TR-C 6-axis IMU was constructed to investigate 
 what information about a die roll can be recovered from its motion.
 
 
@@ -52,7 +49,8 @@ Logistic regression, QDA and decision-tree classifiers were compared with a phys
 
 
 
-The final 300 ms before settling were resampled into 15 states. The states were randomly shuffled and their acceleration and angular-velocity vectors normalised to remove magnitude information.
+The final 300 ms before settling were resampled into 15 states. 
+The states were randomly shuffled and their acceleration and angular-velocity vectors normalised to remove magnitude information.
 
 
 
@@ -61,8 +59,6 @@ A self-attention neural network, conditioned on the final face, was trained to p
 
 On the held-out test set (146 rolls):
 
-
-
 - Random pairwise baseline: 50%
 - Mean pairwise ordering accuracy: 81.8%
 - Mean Spearman rank correlation: 0.782
@@ -70,8 +66,6 @@ On the held-out test set (146 rolls):
 
 
 ## Repository Structure
-
-
 
 - `data/raw/` — raw IMU measurements
 
@@ -87,8 +81,5 @@ On the held-out test set (146 rolls):
 
 ## Authors
 
-
-
 Ivan Tanev
-
 Department of Mathematics, Imperial College London
