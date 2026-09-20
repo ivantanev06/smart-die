@@ -16,9 +16,7 @@ The project investigates two questions:
 
 1. How early before settling does the final face become predictable?
 
-2. Can the chronological motion sequence be reconstructed from shuffled
-
-IMU states using a self-attention neural network?
+2. Can the chronological motion sequence be reconstructed from shuffled IMU states using a self-attention neural network?
 
 
 
