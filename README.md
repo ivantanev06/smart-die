@@ -82,4 +82,5 @@ On the held-out test set (146 rolls):
 ## Authors
 
 Ivan Tanev
+
 Department of Mathematics, Imperial College London
