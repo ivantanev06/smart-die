@@ -1,34 +1,109 @@
-# Smart Die
+# Smart Die: Final-Face Prediction and Motion Reconstruction with Self-Attention
 
-A motion-sensing six-sided die using IMU time-series data, statistical machine learning and TinyML to analyse roll states and investigate whether the final face can be predicted from its motion.
 
-## Project Overview
 
-The Smart Die is a physical six-sided die built around a Seeed Studio XIAO nRF52840 Sense microcontroller. Its onboard inertial measurement unit (IMU) records three-axis linear acceleration and three-axis angular velocity throughout each roll.
+A physical smart die containing a Seeed Studio XIAO nRF52840 Sense
 
-At each sampling time, the motion of the die is represented by:
+and its onboard LSM6DS3TR-C 6-axis IMU was constructed to investigate
+
+what information about a die roll can be recovered from its motion.
+
+
+
+The project investigates two questions:
+
+
+
+1. How early before settling does the final face become predictable?
+
+2. Can the chronological motion sequence be reconstructed from shuffled
+
+IMU states using a self-attention neural network?
+
+
+
+## Dataset
+
+
+
+1,000 physical die rolls were recorded.
+
+
+
+Each IMU measurement contains
 
 (ax, ay, az, wx, wy, wz)
 
-The project will use these measurements to study the state of a die roll and apply statistical and machine learning methods to the resulting time-series data.
+corresponding to three-axis acceleration and angular velocity.
 
-## Objectives
 
-- Design and 3D print the physical die.
-- Record six-axis IMU data during real die rolls.
-- Detect different states of a roll.
-- Test the physical die for outcome bias.
-- Investigate whether the final face can be predicted from its motion.
-- Explore TinyML for on-device inference.
-- Transmit measurements and predictions using Bluetooth Low Energy (BLE).
 
-## Hardware
+970 rolls contained enough pre-settling data for the prediction
 
-- Seeed Studio XIAO nRF52840 Sense, with onboard 6-axis IMU
-- 3.7 V LiPo battery
-- Power switch
-- Custom 3D-printed enclosure
+and motion-sequence reconstruction analysis.
 
-## Status
 
-🚧 Work in progress — hardware prototyping and embedded programming.
+
+## Final-Face Prediction
+
+
+
+Logistic regression, QDA and decision-tree classifiers were compared
+
+with a physically motivated instantaneous-acceleration predictor.
+
+
+
+## Motion Sequence Reconstruction
+
+
+
+The final 300 ms before settling were resampled into 15 states.
+
+The states were randomly shuffled and their acceleration and
+
+angular-velocity vectors normalised to remove magnitude information.
+
+
+
+A self-attention neural network, conditioned on the final face,
+
+was trained to predict each state's relative position in the sequence.
+
+
+
+On the held-out test set (146 rolls):
+
+
+
+- Random pairwise baseline: 50%
+
+- Mean pairwise ordering accuracy: 81.8%
+
+- Mean Spearman rank correlation: 0.782
+
+
+
+## Repository Structure
+
+
+
+- `data/raw/` — raw IMU measurements
+
+- `data/metadata/` — roll metadata and final faces
+
+- `analysis/` — Python notebook containing the statistical and ML analysis
+
+- `arduino/` — code used to collect measurements from the smart die
+
+- `poster/` — final project poster
+
+
+
+## Authors
+
+
+
+Ivan Tanev
+
+Department of Mathematics, Imperial College London
