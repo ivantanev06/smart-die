@@ -36,9 +36,7 @@ corresponding to three-axis acceleration and angular velocity.
 
 
 
-970 rolls contained enough pre-settling data for the prediction
-
-and motion-sequence reconstruction analysis.
+970 rolls contained enough pre-settling data for the prediction and motion-sequence reconstruction analysis.
 
 
 
@@ -46,9 +44,7 @@ and motion-sequence reconstruction analysis.
 
 
 
-Logistic regression, QDA and decision-tree classifiers were compared
-
-with a physically motivated instantaneous-acceleration predictor.
+Logistic regression, QDA and decision-tree classifiers were compared with a physically motivated instantaneous-acceleration predictor.
 
 
 
@@ -56,18 +52,11 @@ with a physically motivated instantaneous-acceleration predictor.
 
 
 
-The final 300 ms before settling were resampled into 15 states.
-
-The states were randomly shuffled and their acceleration and
-
-angular-velocity vectors normalised to remove magnitude information.
+The final 300 ms before settling were resampled into 15 states. The states were randomly shuffled and their acceleration and angular-velocity vectors normalised to remove magnitude information.
 
 
 
-A self-attention neural network, conditioned on the final face,
-
-was trained to predict each state's relative position in the sequence.
-
+A self-attention neural network, conditioned on the final face, was trained to predict each state's relative position in the sequence.
 
 
 On the held-out test set (146 rolls):
@@ -75,9 +64,7 @@ On the held-out test set (146 rolls):
 
 
 - Random pairwise baseline: 50%
-
 - Mean pairwise ordering accuracy: 81.8%
-
 - Mean Spearman rank correlation: 0.782
 
 
